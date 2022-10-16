@@ -7,13 +7,12 @@
  * university code of academic integrity:
  *  https://catalog.upenn.edu/pennbook/code-of-academic-integrity/ >
  * Signed,
- * Author: YOUR NAME HERE
- * Penn email: <YOUR-EMAIL-HERE@seas.upenn.edu>
- * Date: YYYY-MM-DD
+ * Author: Ryan Ferguson
+ * Penn email: <rfergu1@seas.upenn.edu>
+ * Date: 2022-10-16
  */
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class GraphUtils {
     @SuppressWarnings("unused")
@@ -30,9 +29,38 @@ public class GraphUtils {
      * @param dest  destination node
      * @return the smallest number of edges from the src to dest, or -1 for any
      *         invalid input
+     *  O(n+m) since this is just a modification of BFS
      */
     public static int minDistance(Graph graph, String src, String dest) {
-        return 0;
+        //handle invalid inputs
+        if(graph==null) return -1;
+        if(src == null) return -1;
+        if(dest == null) return -1;
+        if(!graph.containsNode(src)) return -1;
+        if(!graph.containsNode(dest)) return -1;
+        if(!graph.bfs(src,dest)) return -1; //no path exists from source to dest
+        //check if source = destination
+        if(src.equals(dest)) return 0;
+        //otherwise essentially run BFS keeping track of levels of each vertex using hashmap
+        Set<String> marked = new HashSet<>();
+        Map<String,Integer> level = new HashMap<>();
+        Queue<String> toExplore = new LinkedList<>();
+        marked.add(src);
+        toExplore.add(src);
+        level.put(src,0); //set level of source to 0;
+        while (!toExplore.isEmpty()) {
+            String current = toExplore.remove();
+            for (String neighbor : graph.getNodeNeighbors(current)) {
+                if (!marked.contains(neighbor)) {
+                    level.put(neighbor,level.get(current)+1); //add 1 to the level of the parent and store current
+                    if (neighbor.equals(dest))
+                        return level.get(neighbor);
+                    marked.add(neighbor);
+                    toExplore.add(neighbor);
+                }
+            }
+        }
+        return -1;
     }
 
     /**
@@ -51,10 +79,35 @@ public class GraphUtils {
      *         edges from src to each node is less than or equal to distance, or
      *         null on invalid input
      */
-    public static Set<String> nodesWithinDistance(Graph graph, String src, int distance) {
-        return null;
+    public static Set<String> nodesWithinDistance(Graph graph, String src, int distance){
+        Set<String> result = new HashSet<>();
+        //handle invalid inputs
+        if(graph==null) return null;
+        if(src == null) return null;
+        if(distance < 1) return null;
+        if(!graph.containsNode(src)) return null;
+        //otherwise essentially run BFS keeping track of levels of each vertex using hashmap
+//        Set<String> marked = new HashSet<>();
+        Map<String,Integer> level = new HashMap<>();
+        Queue<String> toExplore = new LinkedList<>();
+//            marked.add(src);
+            toExplore.add(src);
+            level.put(src,0); //set level of source to 0;
+            while (!toExplore.isEmpty()) {
+            String current = toExplore.remove();
+            for (String neighbor : graph.getNodeNeighbors(current)) {
+                if (!level.containsKey(neighbor)) {
+                    level.put(neighbor,level.get(current)+1); //add 1 to the level of the parent and store current
+                    if (level.get(neighbor)<= distance) {
+                        result.add(neighbor);
+                    }
+//                    marked.add(neighbor);
+                    toExplore.add(neighbor);
+                }
+            }
+        }
+            return result;
     }
-
     /**
      * This method returns true only if the graph g is non-null and has at least
      * three nodes and values is non-null and represents a Hamiltonian cycle through
@@ -66,6 +119,11 @@ public class GraphUtils {
      * @return true only if values represents Hamiltonian cycle through g
      */
     public static boolean isHamiltonianCycle(Graph g, List<String> values) {
+        //handle invalid inputs
+        if(g==null) return false;
+        if(values == null) return false;
+        if(g.numNodes < 3) return false;
+
         return false;
     }
 }
