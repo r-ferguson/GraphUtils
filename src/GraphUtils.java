@@ -122,8 +122,31 @@ public class GraphUtils {
         //handle invalid inputs
         if(g==null) return false;
         if(values == null) return false;
-        if(g.numNodes < 3) return false;
+        if(g.numNodes < 3) return false;  //less than 3 since end node has to be the same as first node [A,B,C,A]
+        if(values.size() < 4) return false;
+        //check if values starts and ends with same node
+        if(!values.get(0).equals(values.get(values.size()-1))) return false;
+        //check if nodes are repeated more than once in values list (besides first and last)
+        Set<String> nodes = new HashSet<>();
+        for(int i=0; i<values.size()-1; i++){
+            if(!g.containsNode(values.get(i))) return false; //check if node exists in graph
+            if(nodes.contains(values.get(i))){
+                return false; //node repeated more than once in cycle
+            } else nodes.add(values.get(i));
+        }
+//        System.out.println(nodes.size() + " = " + g.numNodes);
+        if (nodes.size() != g.numNodes) return false;
 
-        return false;
+        //check if graph contains hamiltonian cycle
+        for(int i = 1; i< values.size(); i++){
+            String current = values.get(i);
+//            System.out.println("Current: " + current);
+//            System.out.println(values.get(i-1) + " neighbors: " + g.getNodeNeighbors(values.get(i-1)));
+            if (!g.getNodeNeighbors(values.get(i-1)).contains(current)){
+                return false;
+            }
+        }
+
+        return true;
     }
 }

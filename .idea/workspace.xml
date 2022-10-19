@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="874264f5-a09b-445d-a24e-7f5de143a3fb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/emptygraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onelinegraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/onenodegraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GraphUtilsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="874264f5-a09b-445d-a24e-7f5de143a3fb" name="Changes" comment="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these.">
+      <change afterPath="$PROJECT_DIR$/2nodegraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3nodegraph.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hamiltonian_default.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/self_loop.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unconnected_graph.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GraphUtils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/GraphUtils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GraphUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,8 +92,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665932421408</updated>
-      <workItem from="1665932422660" duration="5617000" />
+      <workItem from="1665932422660" duration="12533000" />
     </task>
+    <task id="LOCAL-00001" summary="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these.">
+      <created>1665942395859</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665942395859</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,5 +117,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these." />
   </component>
 </project>
