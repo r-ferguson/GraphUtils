@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="874264f5-a09b-445d-a24e-7f5de143a3fb" name="Changes" comment="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these.">
-      <change afterPath="$PROJECT_DIR$/2nodegraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/3nodegraph.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hamiltonian_default.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/self_loop.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unconnected_graph.txt" afterDir="false" />
+    <list default="true" id="874264f5-a09b-445d-a24e-7f5de143a3fb" name="Changes" comment="Passes all tests written so far.  Try to think of more tests.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GraphUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GraphUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GraphUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665932421408</updated>
-      <workItem from="1665932422660" duration="12533000" />
+      <workItem from="1665932422660" duration="14646000" />
     </task>
     <task id="LOCAL-00001" summary="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these.">
       <created>1665942395859</created>
@@ -101,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665942395859</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Passes all tests written so far.  Try to think of more tests.">
+      <created>1666220989338</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666220989338</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented minDistance and nodesWithinDistance.  Needs more testing on both of these." />
+    <MESSAGE value="Passes all tests written so far.  Try to think of more tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Passes all tests written so far.  Try to think of more tests." />
   </component>
 </project>

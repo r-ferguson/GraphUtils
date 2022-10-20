@@ -54,8 +54,15 @@ public class GraphUtilsTest {
         assertEquals("minDistance on oneline undirected graph returned value other than 0 when src = dest",0,GraphUtils.minDistance(onelineUD,"0", "0"));
         assertEquals("minDistance on oneline directed graph returned value other than 0 when src = dest",0,GraphUtils.minDistance(onelineD,"2", "2"));
 
+        assertEquals("minDistance on oneline directed graph returned value other than 0 when src = dest",-1,GraphUtils.minDistance(onelineD,"2", "0"));
+
         assertEquals("minDistance on undirected unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(unconUD,"A", "E"));
         assertEquals("minDistance on directed unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(unconD,"A", "E"));
+
+        assertEquals("minDistance on undirected unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(onelineUD,"A", "Z"));
+        assertEquals("minDistance on directed unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(onelineD,"A", "Z"));
+        assertEquals("minDistance on undirected unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(onelineUD,"Z", "A"));
+        assertEquals("minDistance on directed unconnected graph returned value other than -1 when unreachable",-1,GraphUtils.minDistance(onelineD,"Z", "A"));
     }
 
     @org.junit.Test
@@ -211,5 +218,14 @@ public class GraphUtilsTest {
         inputList.add("A");
         assertFalse("Expected null graph input to return false",GraphUtils.isHamiltonianCycle(null,inputList));
         assertFalse("Expected null inputList to return false",GraphUtils.isHamiltonianCycle(hamdefD,null));
+
+        inputList.clear();
+        inputList.add("A");
+        inputList.add(null);
+        inputList.add("C");
+        inputList.add("D");
+        inputList.add("E");
+        inputList.add("A");
+        assertFalse("Expected null graph input to return false",GraphUtils.isHamiltonianCycle(hamdefD,inputList));
     }
 }
